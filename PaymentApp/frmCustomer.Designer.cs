@@ -97,6 +97,7 @@
       this.cmbName.Name = "cmbName";
       this.cmbName.Size = new System.Drawing.Size(176, 33);
       this.cmbName.TabIndex = 6;
+      this.cmbName.SelectedIndexChanged += new System.EventHandler(this.DataChanged);
       // 
       // lblPaymentMethod
       // 
@@ -105,6 +106,7 @@
       this.lblPaymentMethod.Name = "lblPaymentMethod";
       this.lblPaymentMethod.Size = new System.Drawing.Size(330, 159);
       this.lblPaymentMethod.TabIndex = 2;
+      this.lblPaymentMethod.TextChanged += new System.EventHandler(this.DataChanged);
       // 
       // frmCustomer
       // 
@@ -120,6 +122,7 @@
       this.Name = "frmCustomer";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
       this.Text = "Customer";
+      this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomer_FormClosing);
       this.Load += new System.EventHandler(this.frmCustomer_Load);
       this.groupBox1.ResumeLayout(false);
       this.ResumeLayout(false);

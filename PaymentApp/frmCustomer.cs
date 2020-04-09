@@ -27,6 +27,7 @@ namespace PaymentApp
 
     private void btnSelectPaymentMethod_Click(object sender, EventArgs e)
     {
+      // pulls up the new form and deals with it's data.
       Form paymentFom = new frmPayment();
       DialogResult selectedButton = paymentFom.ShowDialog();
       if (selectedButton == DialogResult.OK)
@@ -47,10 +48,8 @@ namespace PaymentApp
 
     private void DataChanged(object sender, EventArgs e)
     {
-      if (isValidData())
-      {
-        isDataSaved = false;
-      }
+      // called wheneve the combobox value or the text of the groupbox's label is modified. Will be used to propt the user to save if they exit without doing so.
+      isDataSaved = false;
     }
 
     private void SaveData()
@@ -82,6 +81,7 @@ namespace PaymentApp
 
     private void frmCustomer_FormClosing(object sender, FormClosingEventArgs e)
     {
+      // fires before close upon closing. 
       if (isDataSaved == false)
       {
         DialogResult save = MessageBox.Show("You have unsaved data. Would you like to save it?", "Customer", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);

@@ -115,5 +115,6 @@ namespace PaymentApp
       this.Tag = message;
       this.DialogResult = DialogResult.OK;
     }
+
   }
 }
